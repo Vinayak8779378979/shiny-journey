@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zanzaneet Biryani</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #020617;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1604908554007-45c1c6bdbd83') center/cover;
+      height: 300px;
+      display: flex;
+      align-items: end;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      background: rgba(0,0,0,0.7);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .menu-title {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .price {
+      color: #22c55e;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .order-btn {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      background: #25D366;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>Zanzaneet Biryani 🍛</header>
+
+<div class="hero">
+  <h1>Hot & Fresh Biryani Delivered 🔥</h1>
+</div>
+
+<div class="container">
+
+  <div class="menu-title">🍽️ Our Menu</div>
+
+  <div class="grid">
+
+    <!-- Dum Biryani -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604908176997-4318b7c9b7d0">
+      <div class="card-content">
+        <h3>Dum Biryani</h3>
+        <p>Authentic slow-cooked dum biryani.</p>
+        <div class="price">Half ₹150 | Full ₹250</div>
+        <a class="order-btn" href="https://wa.me/918779378979?text=I want to order Dum Biryani">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Tikka Biryani -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1625944525903-bf4a1d2bdb65">
+      <div class="card-content">
+        <h3>Tikka Biryani</h3>
+        <p>Smoky tikka flavor with spices.</p>
+        <div class="price">Half ₹200 | Full ₹300</div>
+        <a class="order-btn" href="https://wa.me/918779378979?text=I want to order Tikka Biryani">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Special -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598514982844-8b3b3b4b4c7d">
+      <div class="card-content">
+        <h3>Special Biryani</h3>
+        <p>Ask for today’s special.</p>
+        <div class="price">Starting ₹180</div>
+        <a class="order-btn" href="https://wa.me/918779378979?text=Send me full menu">View Menu</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info">
+    <p>📍 Sakinaka Metro, Mumbai</p>
+    <p>📞 8779378979</p>
+    <p>⭐ Rated for Taste & Quality</p>
+  </div>
+
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/918779378979?text=Hello, I want to order biryani">💬</a>
+
+</body>
+</html>
