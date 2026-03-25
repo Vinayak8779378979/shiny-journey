@@ -97,3 +97,22 @@ function submitReview() {
     document.getElementById("name").value = "";
     document.getElementById("message").value = "";
 }
+function changeQty(btn, change) {
+    let qtySpan = btn.parentElement.querySelector(".qty");
+    let qty = parseInt(qtySpan.innerText);
+
+    qty += change;
+    if (qty < 1) qty = 1;
+
+    qtySpan.innerText = qty;
+}
+
+function addToCartWithQty(btn, item, price) {
+    let qty = parseInt(
+        btn.parentElement.querySelector(".qty").innerText
+    );
+
+    for (let i = 0; i < qty; i++) {
+        addToCart(item, price);
+    }
+}
