@@ -260,10 +260,11 @@ button {
 }
 
 .brand-name {
-  font-size: 32px;   /* bigger text */
+  font-size: 38px;
   font-weight: bold;
-  color: #ffffff;    /* 🔥 FIX: make it white */
-  margin-top: 5px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 .navbar {
   padding: 20px;
