@@ -64,3 +64,12 @@ function checkStatus() {
 }
 
 checkStatus();
+window.addEventListener("load", () => {
+  const cards = document.querySelectorAll(".review-card");
+
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("visible");
+    }, index * 300);
+  });
+});
