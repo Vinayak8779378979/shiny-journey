@@ -243,21 +243,28 @@ button {
   cursor: pointer;
 }
 .logo {
-  height: 150px;
+  height: 180px;   /* bigger logo */
   width: auto;
 }
 
 .brand {
   display: flex;
   align-items: center;
+  justify-content: center;   /* center everything */
   gap: 10px;
 }
+
 .brand.vertical {
   flex-direction: column;
   text-align: center;
 }
 
 .brand-name {
-  font-size: 25px;
-  color: red;
+  font-size: 32px;   /* bigger text */
+  font-weight: bold;
+  color: #ffffff;    /* 🔥 FIX: make it white */
+  margin-top: 5px;
+}
+.navbar {
+  padding: 20px;
 }
