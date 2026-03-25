@@ -262,7 +262,7 @@ button {
 .brand-name {
   font-size: 34px;   /* bigger text */
   font-weight: bold;
-  color: #ffffff;    /* 🔥 FIX: make it white */
+  color: red;    /* 🔥 FIX: make it white */
   margin-top: 5px;
 }
 .navbar {
