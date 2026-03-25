@@ -106,13 +106,54 @@ function changeQty(btn, change) {
 
     qtySpan.innerText = qty;
 }
-
 function addToCartWithQty(btn, item, price) {
     let qty = parseInt(
         btn.parentElement.querySelector(".qty").innerText
     );
 
-    for (let i = 0; i < qty; i++) {
-        addToCart(item, price);
+    let existing = cart.find(c => c.item === item);
+
+    if (existing) {
+        existing.qty += qty;
+    } else {
+        cart.push({ item, price, qty });
     }
+
+    displayCart();
+}
+function displayCart() {
+    let cartItems = document.getElementById("cart-items");
+    let total = 0;
+    cartItems.innerHTML = "";
+
+    cart.forEach((c) => {
+        let itemTotal = c.price * c.qty;
+        total += itemTotal;
+
+        cartItems.innerHTML += `
+          <li>
+            ${c.item} × ${c.qty} = ₹${itemTotal}
+          </li>
+        `;
+    });
+
+    document.getElementById("total").innerText = "Total: ₹" + total;
+}
+function checkout() {
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
+
+    let message = "Hello, I want to order:\n";
+
+    cart.forEach(c => {
+        message += `- ${c.item} × ${c.qty} = ₹${c.price * c.qty}\n`;
+    });
+
+    let total = cart.reduce((sum, c) => sum + (c.price * c.qty), 0);
+    message += `Total: ₹${total}`;
+
+    let url = "https://wa.me/918779378979?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
 }
