@@ -73,3 +73,27 @@ window.addEventListener("load", () => {
     }, index * 300);
   });
 });
+function submitReview() {
+    let name = document.getElementById("name").value;
+    let rating = document.getElementById("rating").value;
+    let message = document.getElementById("message").value;
+
+    if (name === "" || message === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    let stars = "⭐".repeat(rating);
+
+    let reviewHTML = `
+      <div class="review-card visible">
+        ${stars} "${message}" – ${name}
+      </div>
+    `;
+
+    document.querySelector(".reviews").innerHTML += reviewHTML;
+
+    // Clear form
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+}
