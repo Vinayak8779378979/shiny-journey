@@ -1,8 +1,49 @@
-const reviews = document.querySelectorAll('.review-card');
-window.addEventListener('scroll', () => {
-  reviews.forEach(r => {
-    const top = r.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    if(top < windowHeight - 100) r.classList.add('visible');
+let cart = [];
+
+function addToCart(item, price) {
+  cart.push({item, price});
+  updateCart();
+}
+
+function updateCart() {
+  let cartItems = document.getElementById("cart-items");
+  let total = 0;
+
+  cartItems.innerHTML = "";
+
+  cart.forEach((c, index) => {
+    total += c.price;
+
+    cartItems.innerHTML += `
+      <li>
+        ${c.item} - ₹${c.price}
+        <button onclick="removeItem(${index})">❌</button>
+      </li>
+    `;
   });
-});
+
+  document.getElementById("total").innerText = total;
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function placeOrder() {
+  if(cart.length === 0){
+    alert("Cart is empty!");
+    return;
+  }
+
+  let message = "Hello, I want to order:%0A";
+
+  cart.forEach(c => {
+    message += `${c.item} - ₹${c.price}%0A`;
+  });
+
+  let total = document.getElementById("total").innerText;
+  message += `%0ATotal: ₹${total}`;
+
+  window.open(`https://wa.me/918779378979?text=${message}`, "_blank");
+}
