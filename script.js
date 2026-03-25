@@ -47,3 +47,20 @@ function placeOrder() {
 
   window.open(`https://wa.me/918779378979?text=${message}`, "_blank");
 }
+
+function checkStatus() {
+  let now = new Date();
+  let hour = now.getHours();
+
+  let status = document.getElementById("status");
+
+  if(hour >= 11 && hour <= 23){
+    status.innerText = "🟢 Open Now";
+    status.style.color = "green";
+  } else {
+    status.innerText = "🔴 Closed";
+    status.style.color = "red";
+  }
+}
+
+checkStatus();
