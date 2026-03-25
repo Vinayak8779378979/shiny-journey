@@ -252,3 +252,12 @@ button {
   align-items: center;
   gap: 10px;
 }
+.brand.vertical {
+  flex-direction: column;
+  text-align: center;
+}
+
+.brand-name {
+  font-size: 18px;
+  color: white;
+}
